@@ -10,10 +10,13 @@ class PostList extends React.Component{
     renderlist(){
         return (this.props.posts.map(post=>{
             return(
-                <div key={post.id}>
-                    <div>
-                        <p>{post.title}</p>
-                        <p>{post.body}</p>
+                <div className='item' key={post.id}>
+                    <i className='large middle aligned icon user'/>
+                    <div className='content'>
+                        <div className='description'>
+                            <p>{post.title}</p>
+                            <p>{post.body}</p>
+                        </div>
                     </div>
                 </div>
             )
@@ -22,7 +25,7 @@ class PostList extends React.Component{
     render(){
         console.log(this.props.posts)
         return(
-            <div>{this.renderlist()}</div>//Need to call function over here else will throw some error
+            <div className='ui divided relaxed list'>{this.renderlist()}</div>//Need to call function over here else will throw some error
         )
     }
 }
